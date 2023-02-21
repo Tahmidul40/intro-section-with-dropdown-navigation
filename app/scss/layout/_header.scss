@@ -1,0 +1,237 @@
+@use "../util" as u;
+@use "../globals" as g;
+
+.header {
+  .nav {
+    padding: 25px 16px;
+
+    @include u.breakpoint(large) {
+      padding: 30px 30px 60px 30px;
+    }
+
+    .nav-ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        width: 84px;
+      }
+
+      .menu-open {
+        display: block;
+        z-index: 999;
+
+        @include u.breakpoint(large) {
+          display: none;
+        }
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .menu-close {
+        display: none;
+        z-index: 999;
+      }
+
+      .show {
+        display: block;
+      }
+
+      .menu-expand {
+        display: none;
+        position: relative;
+
+        @include u.breakpoint-down(medium) {
+          padding: 80px 25px 100px;
+        }
+
+        .feature {
+          position: relative;
+
+          .feature-dropdown {
+            display: none;
+          }
+
+          .feature-drop {
+            display: block;
+          }
+        }
+
+        .company {
+          position: relative;
+
+          .company-dropdown {
+            display: none;
+          }
+
+          .company-drop {
+            display: block;
+          }
+        }
+
+        @include u.breakpoint(large) {
+          display: block;
+          width: 90%;
+
+          .menu-expand {
+            padding: 0;
+          }
+
+          .menu-expand-ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            li {
+              margin-right: 40px;
+            }
+
+            .part1 {
+              display: flex;
+            }
+
+            .part2 {
+              display: flex;
+              align-items: center;
+
+              .cta-reg {
+                margin-right: 0;
+                padding: 12px 20px;
+                border: 1px solid g.$almost-black;
+                border-radius: 12px;
+
+                &:hover {
+                  color: g.$almost-black;
+                  cursor: pointer;
+                }
+              }
+            }
+
+            .feature {
+              position: relative;
+
+              .feature-dropdown {
+                position: absolute;
+                top: 55px;
+                left: -84px;
+                display: none;
+                background-color: #fff;
+                padding: 25px 25px 10px;
+                border-radius: 18px;
+                box-shadow: 0px 5px 21px -4px rgba(0, 0, 0, 0.5);
+
+                li {
+                  margin-right: 0;
+                  margin-bottom: 14px;
+
+                  a {
+                    img {
+                      margin-right: 15px;
+                    }
+                  }
+                }
+              }
+
+              .feature-drop {
+                display: block;
+              }
+            }
+
+            .company {
+              position: relative;
+
+              .company-dropdown {
+                width: 140px;
+                position: absolute;
+                top: 55px;
+                display: none;
+                background-color: #fff;
+                padding: 25px 25px 10px;
+                border-radius: 18px;
+                box-shadow: 0px 5px 21px -4px rgba(0, 0, 0, 0.5);
+
+                li {
+                  margin-right: 0;
+                  margin-bottom: 14px;
+                }
+              }
+
+              .company-drop {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      .active {
+        display: block;
+        position: absolute;
+        background: g.$almost-white;
+        width: 60%;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        z-index: 99;
+
+        li {
+          margin-bottom: 30px;
+        }
+
+        .feature-dropdown {
+          padding-left: 20px;
+
+          .mt {
+            margin-top: 20px;
+          }
+
+          li {
+            margin-bottom: 20px;
+          }
+        }
+
+        .company-dropdown {
+          padding-left: 20px;
+
+          .mt {
+            margin-top: 20px;
+          }
+
+          li {
+            margin-bottom: 20px;
+          }
+        }
+
+        .part2 {
+          max-width: 180px;
+          text-align: center;
+          margin-top: 50px;
+
+          .cta-reg {
+            padding: 12px 20px;
+            border: 1px solid g.$medium-gray;
+            border-radius: 12px;
+
+            &:hover {
+              border-color: g.$almost-black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer
+footer {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 10px;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
